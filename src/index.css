@@ -32,3 +32,28 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@keyframes dataStreamPulse {
+  0% { opacity: 0.15; mask-image: linear-gradient(to bottom, transparent 0%, white 0%, transparent 20%); }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.15; mask-image: linear-gradient(to bottom, transparent 80%, white 100%, transparent 100%); }
+}
+
+.data-stream-pulse {
+  animation: dataStreamPulse 2s ease-in-out infinite;
+}
+
+@keyframes loopBorderTrace {
+  0% {
+    stroke-dashoffset: 0px;
+    stroke-dasharray: 0px, 1231px;
+  }
+  50% {
+    stroke-dashoffset: -615.5px;
+    stroke-dasharray: 615.5px, 615.5px;
+  }
+  100% {
+    stroke-dashoffset: -1846.5px;
+    stroke-dasharray: 0px, 1231px;
+  }
+}
