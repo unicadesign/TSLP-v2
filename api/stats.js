@@ -41,7 +41,7 @@ export const monad = defineChain({
 });
 
 export default async function handler(req, res) {
-  provider = createClient({
+  const provider = createClient({
     chain: monad,
     transport: fallback([
       http(RPC_URL, {
@@ -54,22 +54,23 @@ export default async function handler(req, res) {
       http(RPC_URL)
     ]),
   });
-  // CORS
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET')
-  res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=120')
 
-  // Return cached data if fresh
-  if (cachedData && Date.now() - cacheTime < CACHE_TTL) {
-    return res.status(200).json(cachedData)
-  }
 
   try {
     // Initialize SDK
-    TSCore.init({
-      network: NetworkType.Mainnet,
-      provider: provider,
-    })
+    if (!TSCore.isInitialized()) {
+      TSCore.init({
+        network: NetworkType.MAINNET,
+        provider: {
+          evm: {
+            [MAINNET_TS_CHAIN_ID]: provider,
+          },
+        },
+      })
+    } else {
+      TSCore.setNetwork(NetworkType.MAINNET)
+      TSCore.setProvider(MAINNET_TS_CHAIN_ID, provider)
+    }
 
     // Fetch pool info for all mainnet tokens
     const tokenIds = Object.values(MAINNET_TS_TOKEN_ID)
@@ -79,8 +80,7 @@ export default async function handler(req, res) {
         return { tokenId: tsTokenId, poolInfo }
       })
     )
-    console.log(" ======= got here =====")
-    console.log(poolResults)    // Fetch oracle prices
+    // Fetch oracle prices
     let oraclePrices = {}
     try {
       oraclePrices = await TSOracle.read.oraclePrices()
@@ -94,6 +94,8 @@ export default async function handler(req, res) {
     let weightedApySum = 0
     let totalWeight = 0
     let poolCount = 0
+
+    
 
     for (const result of poolResults) {
       if (result.status !== 'fulfilled') continue
@@ -142,19 +144,19 @@ export default async function handler(req, res) {
     cachedData = data
     cacheTime = Date.now()
 
-    return res.status(200).json(data)
+    return data
   } catch (error) {
     console.error('Stats API error:', error)
 
     // Return fallback data on error
-    return res.status(200).json({
-      tvl: 720247.78,
+    return {
+      tvl: 720247.72,
       avgApy: 24.82,
       protocolHealth: 99.9,
       poolCount: 0,
       tokenCount: 19,
       timestamp: Date.now(),
       fallback: true,
-    })
+    }
   }
 }

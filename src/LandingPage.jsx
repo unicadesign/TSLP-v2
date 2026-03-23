@@ -17,6 +17,7 @@ import animWETH from '../assets/animation-assests/wETH.svg'
 import animUSDC from '../assets/animation-assests/USDC.svg'
 import animUSD1 from '../assets/animation-assests/USD1.svg'
 import animYzUSD from '../assets/animation-assests/yzUSD.svg'
+import handler from '../api/stats'
 
 /* ── Figma asset URLs (valid ~7 days) ── */
 const assets = {
@@ -146,6 +147,8 @@ export function Logo() {
 /* ── Navigation ── */
 export function Nav() {
   const [open, setOpen] = useState(false)
+
+  
 
   return (
     <motion.nav
@@ -1304,6 +1307,12 @@ export function Footer() {
 
 /* ── Main Landing Page ── */
 export default function LandingPage() {
+useEffect(()=>{
+  const res = handler().then((res)=>{
+    console.log(res)
+  })
+
+},[])
   return (
     <div className="bg-surface min-h-screen flex flex-col items-center text-white font-sans overflow-x-clip relative">
       <GridBackground />
