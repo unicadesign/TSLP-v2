@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react'
+'use client'
 
-const FALLBACK = {
+import { useState, useEffect } from 'react'
+import type { LiveStats } from '@/lib/types'
+
+const FALLBACK: LiveStats = {
   tvl: 720247.78,
   avgApy: 24.82,
   protocolHealth: 99.9,
@@ -8,7 +11,7 @@ const FALLBACK = {
 }
 
 export function useLiveStats() {
-  const [stats, setStats] = useState(FALLBACK)
+  const [stats, setStats] = useState<LiveStats>(FALLBACK)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
