@@ -7,7 +7,7 @@ const columns: FooterColumn[] = [
   {
     title: 'Product',
     links: [
-      { label: 'Yield App', href: 'https://app.townsq.xyz/' },
+      { label: 'App', href: 'https://app.townsq.xyz/' },
     ],
   },
   {
