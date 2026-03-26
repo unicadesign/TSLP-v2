@@ -16,6 +16,7 @@ const columns: FooterColumn[] = [
       { label: 'Documentation', href: 'https://docs.townsq.xyz/', external: true },
       { label: 'Audit Reports', href: 'https://github.com/TowneSquare/audit-reports-2025Q3', external: true },
       { label: 'Brand Assets', href: '/brandkit' },
+      { label: 'Mascot', href: '/mascot' },
     ],
   },
   {
@@ -34,11 +35,6 @@ export default function Footer() {
         {/* Brand column */}
         <div className="flex flex-col gap-5 md:gap-6 col-span-2 md:col-span-1">
           <Link href="/"><img src="/assets/ts-logo.svg" alt="TownSquare" className="h-8" /></Link>
-          <p className="text-sm font-inter text-text-muted leading-relaxed">
-            Institutional curator of decentralized
-            finance. Secured by the best, built for
-            the bold.
-          </p>
           <div className="flex flex-col gap-1">
             <Link href="/terms" className="text-[10px] font-medium font-inter text-text-darker hover:text-text-primary transition tracking-[-0.25px] leading-[15px]">
               Terms & Conditions

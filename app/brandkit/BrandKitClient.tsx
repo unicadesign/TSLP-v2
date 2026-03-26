@@ -6,11 +6,16 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import { fadeUp } from '@/lib/constants'
 
+interface AssetDownload {
+  format: string
+  url: string
+}
+
 interface AssetCardProps {
   label: string
   preview: string
   bgClass?: string
-  downloads: { format: string; url: string }[]
+  downloads: AssetDownload[]
 }
 
 function AssetCard({ label, preview, bgClass = 'bg-[#1a1a2e]', downloads }: AssetCardProps) {
@@ -39,20 +44,84 @@ function AssetCard({ label, preview, bgClass = 'bg-[#1a1a2e]', downloads }: Asse
   )
 }
 
-const tsLogoUrl = '/assets/ts-logo.svg'
+const B = '/brand-assets'
 
 const primaryAssets: AssetCardProps[] = [
-  { label: 'Primary Logo — White text', preview: tsLogoUrl, bgClass: 'bg-[#121212]', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
-  { label: 'Primary Logomark', preview: tsLogoUrl, bgClass: 'bg-[#121212]', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
-  { label: 'Primary Logo — Dark text', preview: tsLogoUrl, bgClass: 'bg-white', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
-  { label: 'Primary Logomark', preview: tsLogoUrl, bgClass: 'bg-white', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
+  {
+    label: 'Primary Logo — White text',
+    preview: `${B}/primary-logo/TownSquare-Primary-White-Logo-svg/TownSquare-White-Logo-White-text.svg`,
+    bgClass: 'bg-[#121212]',
+    downloads: [
+      { format: 'SVG', url: `${B}/primary-logo/TownSquare-Primary-White-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/primary-logo/TownSquare-Primary-White-Logo-png.zip` },
+    ],
+  },
+  {
+    label: 'Primary Logomark — White',
+    preview: `${B}/primary-logo/TownSquare-Primary-White-Logo-svg/TownSquare-White-Logomark.svg`,
+    bgClass: 'bg-[#121212]',
+    downloads: [
+      { format: 'SVG', url: `${B}/primary-logo/TownSquare-Primary-White-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/primary-logo/TownSquare-Primary-White-Logo-png.zip` },
+    ],
+  },
+  {
+    label: 'Primary Logo — Dark text',
+    preview: `${B}/primary-logo/TownSquare-Primary-Dark-Logo-svg/TownSquare-Primary-Logo-Dark-text.svg`,
+    bgClass: 'bg-white',
+    downloads: [
+      { format: 'SVG', url: `${B}/primary-logo/TownSquare-Primary-Dark-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/primary-logo/TownSquare-Primary-Dark-Logo-png.zip` },
+    ],
+  },
+  {
+    label: 'Primary Logomark — Dark',
+    preview: `${B}/primary-logo/TownSquare-Primary-Dark-Logo-svg/TownSquare-Primary-Dark-Logomark.svg`,
+    bgClass: 'bg-white',
+    downloads: [
+      { format: 'SVG', url: `${B}/primary-logo/TownSquare-Primary-Dark-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/primary-logo/TownSquare-Primary-Dark-Logo-png.zip` },
+    ],
+  },
 ]
 
 const monochromeAssets: AssetCardProps[] = [
-  { label: 'White Logo', preview: tsLogoUrl, bgClass: 'bg-[#121212]', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
-  { label: 'White Logomark', preview: tsLogoUrl, bgClass: 'bg-[#121212]', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
-  { label: 'Black Logo', preview: tsLogoUrl, bgClass: 'bg-white', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
-  { label: 'Black Logomark', preview: tsLogoUrl, bgClass: 'bg-white', downloads: [{ format: 'SVG', url: tsLogoUrl }] },
+  {
+    label: 'White Logo',
+    preview: `${B}/monochrome-logo/TownSquare-Monochrome-White-Logo-svg/TownSquare-Monochrome-White-Logo.svg`,
+    bgClass: 'bg-[#121212]',
+    downloads: [
+      { format: 'SVG', url: `${B}/monochrome-logo/TownSquare-Monochrome-White-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/monochrome-logo/TownSquare-Monochrome-White-Logo-png.zip` },
+    ],
+  },
+  {
+    label: 'White Logomark',
+    preview: `${B}/monochrome-logo/TownSquare-Monochrome-White-Logo-svg/TownSquare-Monochrome-White-Logomark.svg`,
+    bgClass: 'bg-[#121212]',
+    downloads: [
+      { format: 'SVG', url: `${B}/monochrome-logo/TownSquare-Monochrome-White-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/monochrome-logo/TownSquare-Monochrome-White-Logo-png.zip` },
+    ],
+  },
+  {
+    label: 'Black Logo',
+    preview: `${B}/monochrome-logo/TownSquare-Monochrome-Black-Logo-svg/TownSquare-Monochrome-Black-Logo.svg`,
+    bgClass: 'bg-white',
+    downloads: [
+      { format: 'SVG', url: `${B}/monochrome-logo/TownSquare-Monochrome-Black-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/monochrome-logo/TownSquare-Monochrome-Black-Logo-png.zip` },
+    ],
+  },
+  {
+    label: 'Black Logomark',
+    preview: `${B}/monochrome-logo/TownSquare-Monochrome-Black-Logo-svg/TownSquare-Monochrome-Black-Logomark.svg`,
+    bgClass: 'bg-white',
+    downloads: [
+      { format: 'SVG', url: `${B}/monochrome-logo/TownSquare-Monochrome-Black-Logo-svg.zip` },
+      { format: 'PNG', url: `${B}/monochrome-logo/TownSquare-Monochrome-Black-Logo-png.zip` },
+    ],
+  },
 ]
 
 export default function BrandKitClient() {
@@ -86,7 +155,7 @@ export default function BrandKitClient() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {primaryAssets.map((asset) => (
-              <AssetCard key={asset.label + asset.bgClass} {...asset} />
+              <AssetCard key={asset.label} {...asset} />
             ))}
           </div>
         </motion.section>
@@ -97,7 +166,7 @@ export default function BrandKitClient() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {monochromeAssets.map((asset) => (
-              <AssetCard key={asset.label + asset.bgClass} {...asset} />
+              <AssetCard key={asset.label} {...asset} />
             ))}
           </div>
         </motion.section>
