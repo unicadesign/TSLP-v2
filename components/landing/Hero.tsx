@@ -129,26 +129,6 @@ export default function Hero() {
               >
                 <img src={assets.chartLine2} alt="" className="w-full h-full" />
               </motion.div>
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 1.2 }}
-                className="absolute"
-                style={{ top: '14.5%', left: '36.5%', width: '2%', height: '2.7%' }}
-              >
-                <img src={assets.chartDot1} alt="" className="w-full h-full" />
-              </motion.div>
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 1.0 }}
-                className="absolute"
-                style={{ top: '32.3%', left: '37.3%', width: '1.3%', height: '1.7%' }}
-              >
-                <img src={assets.chartDot2} alt="" className="w-full h-full" />
-              </motion.div>
             </div>
             <motion.div
               initial={{ opacity: 0, y: 8 }}
