@@ -23,29 +23,13 @@ export const modeCardStyle = {
   boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.05)',
 }
 
-/* ── Figma asset URLs (valid ~7 days) ── */
 export const assets = {
-  tsSymbol: 'https://www.figma.com/api/mcp/asset/be27d290-713a-4c8d-af94-0d3dbdbc3d40',
-  tsSymbolInner: 'https://www.figma.com/api/mcp/asset/ac764754-47eb-44f8-afb1-411476d0b19e',
-  townsquareText: 'https://www.figma.com/api/mcp/asset/0aa5da08-54eb-4945-b803-7149e57aecdb',
-  townsquareTextLight: 'https://www.figma.com/api/mcp/asset/d6ecdd2b-5d0b-43df-9d6f-06dd10858678',
-  heroGlow: 'https://www.figma.com/api/mcp/asset/637fcabc-ffca-4281-9ed9-bd472287854e',
-  chartLine1: 'https://www.figma.com/api/mcp/asset/f03b4c76-c1b6-4d7c-b1fa-f62d532ac29e',
-  chartLine2: 'https://www.figma.com/api/mcp/asset/f63a7967-672d-4afd-916b-10d57dc3382f',
-  chartDot1: 'https://www.figma.com/api/mcp/asset/1ad8aa84-2091-4a63-aec9-4dd90725f56a',
-  chartDot2: 'https://www.figma.com/api/mcp/asset/305591b6-7fbe-44fc-84eb-e25ded7f2a2d',
-  dataStream: 'https://www.figma.com/api/mcp/asset/57ab26db-95c9-4f44-b53c-d17fabb12cba',
-  statsIcon: 'https://www.figma.com/api/mcp/asset/200bb872-7274-4cda-b0df-c47fc4b7edbb',
-  arrowIcon: 'https://www.figma.com/api/mcp/asset/33ccd5e2-b9d6-4297-9c04-651583c18d3c',
-  heroArrow: 'https://www.figma.com/api/mcp/asset/a7238e78-f082-48f0-b813-3346acd5b679',
-  vaultIcon: 'https://www.figma.com/api/mcp/asset/c945a284-207e-49e1-a10f-73b912e6827a',
-  crossChainIcon: 'https://www.figma.com/api/mcp/asset/ac30b6e6-f341-486d-beec-56dc0a40e751',
-  loopIcon: 'https://www.figma.com/api/mcp/asset/97210202-2430-41cd-aef4-607dbbb3a144',
-  cardArrow: 'https://www.figma.com/api/mcp/asset/e64ef8d2-9053-4125-b5e8-519cffcc19c1',
-  borderSymbol: 'https://www.figma.com/api/mcp/asset/7030c9c6-0b86-4c47-b070-fe370d1e7864',
-  borderSymbolInner: 'https://www.figma.com/api/mcp/asset/fd2c2809-82e9-4626-bd92-382fcc83e88f',
-  chainMon: 'https://www.figma.com/api/mcp/asset/419551a5-a6c9-4f36-9a95-4b04dc33fa5b',
-  feImg: 'https://www.figma.com/api/mcp/asset/fe7f3f13-d01a-4e02-aa3b-5ce4700e710f',
+  chartLine1: '/assets/hero/chart-line-1.svg',
+  chartLine2: '/assets/hero/chart-line-2.svg',
+  dataStream: '/assets/hero/data-stream.png',
+  vaultIcon: '/assets/icons/vault.svg',
+  crossChainIcon: '/assets/icons/cross-chain.svg',
+  loopIcon: '/assets/icons/loop.svg',
 }
 
 /* ── Dual Engine token arrays ── */

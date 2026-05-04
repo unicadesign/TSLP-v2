@@ -17,11 +17,7 @@ export default function Hero() {
         background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(124,58,237,0.15) 0%, rgba(18,18,18,0) 70%)',
       }}
     >
-      <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[600px] md:w-[856px] h-[600px] md:h-[856px] pointer-events-none">
-        <img src={assets.heroGlow} alt="" className="w-[200%] h-[200%] object-cover -translate-x-1/4 -translate-y-1/4" />
-      </div>
-
-      <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 max-w-[1280px] mx-auto">
+<div className="relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 max-w-[1280px] mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
